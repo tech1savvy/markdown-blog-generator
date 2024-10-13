@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { Button, buttonVariants } from "./ui/button";
 import { ModeToggle } from "./theme-toogle";
@@ -11,12 +13,38 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import LoadingBar from "react-top-loading-bar";
+import { usePathname } from "next/navigation";
 
 const NavBar = () => {
+  const [progress, setProgress] = useState(0);
+  const pathname = usePathname();
+
+  useEffect(() => {
+    setProgress(30);
+
+    setTimeout(() => {
+      setProgress(70);
+    }, 100);
+
+    setTimeout(() => {
+      setProgress(100);
+    }, 500);
+  }, [pathname]);
+
+  useEffect(() => {
+    setProgress(0);
+  }, []);
+
   return (
-    <nav className="h-16 bg-background/40 sticky top-0 border-b px-8 backdrop-blur flex items-center justify-between">
+    <nav className="z-10 h-16 bg-background/40 sticky top-0 border-b px-8 backdrop-blur flex items-center justify-between">
+      <LoadingBar
+        color="#188080"
+        progress={progress}
+        onLoaderFinished={() => setProgress(0)}
+      />
       <div className="text-lg font-bold md:text-xl">
-        <span>🪸 Binary Biome</span>
+        <Link href={"/"}>🪸 Binary Biome</Link>
       </div>
       <ul className="hidden md:flex w-full justify-end items-center space-x-4 ">
         <li>

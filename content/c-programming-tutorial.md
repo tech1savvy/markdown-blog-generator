@@ -5,21 +5,21 @@ description: Comprehensive guide on learning C programming from basics to advanc
 imageUrl: /images/coding.jpeg
 ---
 
-# C Programming Tutorial: A Comprehensive Guide
+> A Comprehensive Guide
 
 Welcome to this comprehensive C programming tutorial! Whether you're a complete beginner or looking to deepen your understanding of C, this guide will take you through the fundamentals and introduce advanced concepts as you progress.
 
-## Introduction to C
+> ## Introduction
 
 C is a powerful general-purpose programming language that is widely used in system programming, embedded systems, and applications requiring high performance. It is known for its efficiency, close-to-hardware control, and portability, making it a crucial language in the software industry.
 
-### Why Learn C?
+> ### Why Learn C?
 
 - **Foundation for Other Languages**: C provides the building blocks for many modern languages, such as C++, Java, and Python.
 - **Performance**: C is highly efficient and is used in performance-critical applications.
 - **Low-level Control**: C allows you to work closely with memory and hardware, providing more control over system resources.
 
-## Setting Up C
+> ## Setting Up
 
 To get started with C programming, you'll need to set up a development environment. Here are the steps:
 
@@ -27,7 +27,7 @@ To get started with C programming, you'll need to set up a development environme
 2. **Choose an IDE/Text Editor**: Popular options include Visual Studio Code, Code::Blocks, or Eclipse. Alternatively, you can use a simple text editor like Sublime Text.
 3. **Verify Installation**: Once the compiler is installed, verify it by typing `gcc --version` in the terminal or command prompt.
 
-## C Basics
+> ## Basics
 
 Now that your environment is set up, let’s start with the basics. In this section, we'll cover:
 
@@ -35,9 +35,9 @@ Now that your environment is set up, let’s start with the basics. In this sect
 - **Control Structures**: Understand how to use conditional statements and loops.
 - **Functions**: Learn how to write reusable code blocks.
 
-### Variables and Data Types
+> ### Variables and Data Types
 
-```c
+```c showLineNumbers
 #include <stdio.h>
 
 int main() {
@@ -50,9 +50,9 @@ int main() {
 }
 ```
 
-### Control Structures
+> ### Control Structures
 
-```c
+```c showLineNumbers
 #include <stdio.h>
 
 int main() {
@@ -72,9 +72,9 @@ int main() {
 }
 ```
 
-### Functions
+> ### Functions
 
-```c
+```c showLineNumbers
 #include <stdio.h>
 
 void greet(char name[]) {
@@ -87,7 +87,7 @@ int main() {
 }
 ```
 
-## Intermediate C
+> ## Intermediate Level
 
 Once you are familiar with the basics, it's time to explore more advanced features of C:
 
@@ -95,9 +95,9 @@ Once you are familiar with the basics, it's time to explore more advanced featur
 - **File I/O**: Understand how to read from and write to files.
 - **Dynamic Memory Allocation**: Explore memory management using `malloc`, `calloc`, and `free`.
 
-### Arrays and Pointers
+> ### Arrays and Pointers
 
-```c
+```c showLineNumbers
 #include <stdio.h>
 
 int main() {
@@ -112,9 +112,9 @@ int main() {
 }
 ```
 
-### File I/O
+> ### File I/O
 
-```c
+```c showLineNumbers
 #include <stdio.h>
 
 int main() {
@@ -131,9 +131,9 @@ int main() {
 }
 ```
 
-### Dynamic Memory Allocation
+> ### Dynamic Memory Allocation
 
-```c
+```c showLineNumbers
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -154,7 +154,7 @@ int main() {
 }
 ```
 
-## Advanced C
+> ## Advanced Level
 
 Now that you are comfortable with intermediate topics, let’s move on to some advanced C programming concepts:
 
@@ -162,9 +162,9 @@ Now that you are comfortable with intermediate topics, let’s move on to some a
 - **Pointers to Functions**: Explore how to use pointers with functions for flexibility.
 - **Memory Management**: Delve deeper into memory management and optimization.
 
-### Structures
+> ### Structures
 
-```c
+```c showLineNumbers
 #include <stdio.h>
 
 struct Student {
@@ -181,9 +181,9 @@ int main() {
 }
 ```
 
-### Pointers to Functions
+> ### Pointers to Functions
 
-```c
+```c showLineNumbers
 #include <stdio.h>
 
 void add(int a, int b) {
@@ -198,9 +198,9 @@ int main() {
 }
 ```
 
-### Memory Management
+> ### Memory Management
 
-```c
+```c {1} showLineNumbers
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -226,7 +226,7 @@ int main() {
 }
 ```
 
-## Conclusion
+> ## Conclusion
 
 Congratulations on making it through this C programming tutorial! You’ve covered everything from the basics of C to advanced topics like structures and memory management. Keep practicing and exploring the vast capabilities of C to enhance your programming skills.
 

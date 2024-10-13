@@ -1,6 +1,7 @@
-import React from "react";
-import { MaxWidthWrapper } from "@/components/MaxWidthWrapper";
+import SiteConfig from "@/config/site";
+import { Metadata, ResolvingMetadata } from "next";
 import { readFileSync } from "fs";
+import { MaxWidthWrapper } from "@/components/MaxWidthWrapper";
 
 import { unified } from "unified";
 import remarkParse from "remark-parse";
@@ -11,7 +12,18 @@ import remarkRehype from "remark-rehype";
 import rehypeStringify from "rehype-stringify";
 // import rehypeHighlight from "rehype-highlight";
 
+import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import matter from "gray-matter";
+
+import rehypeSlug from "rehype-slug";
+import OnThisPage from "@/components/OnThisPage";
+import rehypePrettyCode from "rehype-pretty-code";
+import { transformerCopyButton } from "@rehype-pretty/transformers";
+
+type Props = {
+  params: { slug: string; title: string; description: string };
+  searchParams: { [key: string]: string | string[] | undefined };
+};
 
 export default async function BlogPage({
   params,
@@ -21,7 +33,18 @@ export default async function BlogPage({
   const processor = unified()
     .use(remarkParse)
     .use(remarkRehype)
-    .use(rehypeStringify);
+    .use(rehypeStringify)
+    .use(rehypeAutolinkHeadings)
+    .use(rehypeSlug)
+    .use(rehypePrettyCode, {
+      theme: "material-theme-palenight",
+      transformers: [
+        transformerCopyButton({
+          visibility: "always",
+          feedbackDuration: 3_000,
+        }),
+      ],
+    });
 
   const filePath = `content/${params.slug}`;
   const fileContent = readFileSync(filePath, "utf-8");
@@ -32,9 +55,27 @@ export default async function BlogPage({
   return (
     <div>
       <MaxWidthWrapper className="prose dark:prose-invert">
-        <h1>{data.title}</h1>
-        <div dangerouslySetInnerHTML={{ __html: htmlcontent }}></div>
+        <div className="flex">
+          <div className="px-16">
+            <h1>{data.title}</h1>
+            <div dangerouslySetInnerHTML={{ __html: htmlcontent }}></div>
+          </div>
+          <OnThisPage className="text-sm w-[50%]" htmlcontent={htmlcontent} />
+        </div>
       </MaxWidthWrapper>
     </div>
   );
+}
+
+export async function generateMetadata(
+  { params, searchParams }: Props,
+  parent: ResolvingMetadata
+): Promise<Metadata> {
+  const filePath = `content/${params.slug}`;
+  const fileContent = readFileSync(filePath, "utf-8");
+  const { data } = matter(fileContent);
+  return {
+    title: `${data.title} - ${SiteConfig.title}`,
+    description: data.description,
+  };
 }

@@ -1,5 +1,5 @@
 const SiteConfig = {
-    title: "🪸 Binary Biome",
+  title: "🪸 Binary Biome",
   description: "Powered by Markdown Blog Generator",
 }
 
