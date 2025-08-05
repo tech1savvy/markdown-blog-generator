@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
-import { Button, buttonVariants } from "./ui/button";
+
 import { ModeToggle } from "./theme-toogle";
 import { Menu } from "lucide-react";
 import {
@@ -59,20 +59,7 @@ const NavBar = () => {
         <li>
           <Link href={"/contact"}>Contact</Link>
         </li>
-        <li className="buttons px-4 space-x-2">
-          <Link
-            href={"/login"}
-            className={buttonVariants({ variant: "outline" })}
-          >
-            Login
-          </Link>
-          <Link
-            href={"/signup"}
-            className={buttonVariants({ variant: "outline" })}
-          >
-            Sign-up
-          </Link>
-        </li>
+        
       </ul>
       <div className="flex gap-2 items-center">
         <ModeToggle />

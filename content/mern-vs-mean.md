@@ -2,6 +2,7 @@
 title: MERN vs. MEAN - A Comprehensive Comparison
 slug: mern-vs-mean
 description: Explore the differences between the MERN and MEAN stacks to determine which is better suited for your web development needs.
+imageUrl: https://images.pexels.com/photos/709552/pexels-photo-709552.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1
 ---
 
 # MERN vs. MEAN: A Comprehensive Comparison

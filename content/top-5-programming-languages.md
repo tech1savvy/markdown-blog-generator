@@ -2,6 +2,7 @@
 title: Top 5 Programming Languages to Learn in 2024
 slug: top-5-programming-languages
 description: Discover the top 5 programming languages to learn in 2024, each offering unique advantages and opportunities for career growth.
+imageUrl: https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1
 ---
 
 # Top 5 Programming Languages to Learn in 2024

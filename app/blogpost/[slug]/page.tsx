@@ -1,5 +1,5 @@
 import SiteConfig from "@/config/site";
-import { Metadata, ResolvingMetadata } from "next";
+import { Metadata } from "next";
 import { readFileSync } from "fs";
 import { MaxWidthWrapper } from "@/components/MaxWidthWrapper";
 
@@ -24,6 +24,18 @@ type Props = {
   params: { slug: string; title: string; description: string };
   searchParams: { [key: string]: string | string[] | undefined };
 };
+
+export async function generateMetadata(
+  { params }: Props,
+): Promise<Metadata> {
+  const filePath = `content/${params.slug}`;
+  const fileContent = readFileSync(filePath, "utf-8");
+  const { data } = matter(fileContent);
+  return {
+    title: `${data.title} - ${SiteConfig.title}`,
+    description: data.description,
+  };
+}
 
 export default async function BlogPage({
   params,
@@ -65,17 +77,4 @@ export default async function BlogPage({
       </MaxWidthWrapper>
     </div>
   );
-}
-
-export async function generateMetadata(
-  { params, searchParams }: Props,
-  parent: ResolvingMetadata
-): Promise<Metadata> {
-  const filePath = `content/${params.slug}`;
-  const fileContent = readFileSync(filePath, "utf-8");
-  const { data } = matter(fileContent);
-  return {
-    title: `${data.title} - ${SiteConfig.title}`,
-    description: data.description,
-  };
 }

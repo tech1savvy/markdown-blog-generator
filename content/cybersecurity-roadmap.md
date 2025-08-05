@@ -2,6 +2,7 @@
 title: Cybersecurity Roadmap - A Guide to Protecting Your Digital Assets
 slug: cybersecurity-roadmap
 description: Explore a step-by-step roadmap for building a robust cybersecurity strategy to safeguard your digital assets and protect against cyber threats.
+imageUrl: https://images.pexels.com/photos/60504/security-protection-anti-virus-software-60504.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1
 ---
 
 # Cybersecurity Roadmap: A Guide to Protecting Your Digital Assets

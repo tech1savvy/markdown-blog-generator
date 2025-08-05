@@ -2,6 +2,7 @@
 title: TypeScript Tutorial
 slug: typescript-tutorial
 description: Comprehensive guide on learning TypeScript from basics to advanced topics.  
+imageUrl: https://images.pexels.com/photos/11035474/pexels-photo-11035474.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1
 ---
 
 # Introduction to TypeScript

@@ -2,6 +2,7 @@
 title: Python Tutorial
 slug: python-tutorial
 description: Comprehensive guide on learning Python from basics to advanced topics.
+imageUrl: https://images.pexels.com/photos/1181376/pexels-photo-1181376.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1
 ---
 
 # Python Tutorial: A Comprehensive Guide

@@ -2,6 +2,7 @@
 title: JavaScript Tutorial
 slug: javascript-tutorial
 description: Comprehensive guide on learning JavaScript, from the basics of syntax and functions to advanced topics like asynchronous programming and frameworks.
+imageUrl: https://images.pexels.com/photos/11035386/pexels-photo-11035386.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1
 ---
 
 # JavaScript Tutorial: A Comprehensive Guide

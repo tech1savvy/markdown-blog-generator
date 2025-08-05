@@ -2,6 +2,7 @@
 title: JavaScript Tutorial
 slug: js-tutorial
 description: Comprehensive guide on learning JavaScript from basics to advanced topics.  
+imageUrl: https://images.pexels.com/photos/11035471/pexels-photo-11035471.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1
 ---
 
 

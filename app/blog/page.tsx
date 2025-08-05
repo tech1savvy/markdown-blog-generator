@@ -1,4 +1,3 @@
-import { MaxWidthWrapper } from "@/components/MaxWidthWrapper";
 import React from "react";
 import { buttonVariants } from "@/components/ui/button";
 import { readdirSync, readFileSync } from "fs";
@@ -25,30 +24,23 @@ const blogs: BlogType[] = dirContent.map((file) => {
       "https://placehold.co/600x400/lightslategrey/lightslategrey",
   };
   return value;
-});
+}).slice(0, 6);
 
 const BlogList = () => {
   return (
-    <div className="container mx-auto p-4">
-      <h1 className="text-3xl font-bold mb-6 text-center my-2">My Blogs</h1>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div className="container mx-auto py-8 px-4 sm:px-6 lg:px-8">
+      <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl text-center mb-12">Our Latest Blogs</h1>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {blogs.map((blog: BlogType, index: number) => (
-          <div key={index} className="shadow-lg rounded-lg overflow-hidden">
-            <img
-              className="w-full h-64 object-cover object-top"
-              src={blog.imageUrl}
-              alt={blog.title}
-            />
-            <div className="p-4">
-              <h2 className="text-xl font-semibold mb-2">{blog.title}</h2>
-              <p className="mb-4">{blog.description}</p>
-              <a
-                href={`/blogpost/${blog.slug}.md`}
-                className={buttonVariants({ variant: "default" })}
-              >
-                Read More
-              </a>
-            </div>
+          <div key={index} className="bg-card text-card-foreground rounded-lg shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-xl p-6">
+            <p className="text-2xl font-bold mb-3 leading-tight">{blog.title}</p>
+            <p className="text-muted-foreground mb-4 line-clamp-3">{blog.description}</p>
+            <a
+              href={`/blogpost/${blog.slug}.md`}
+              className={buttonVariants({ variant: "default" })}
+            >
+              Read More
+            </a>
           </div>
         ))}
       </div>
